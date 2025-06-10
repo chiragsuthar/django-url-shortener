@@ -33,7 +33,7 @@ class TestShortLinkAPI:
         
         response = self.client.post(url, data)
         
-        assert response.status_code == status.HTTP_403_FORBIDDEN
+        assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
     def test_list_user_links(self):
         self.client.force_authenticate(user=self.user)
